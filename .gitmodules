@@ -1,0 +1,6 @@
+[submodule "iwing-iot-backend"]
+	path = iwing-iot-backend
+	url = https://github.com/IWING-IoT/iwing-iot-backend.git
+[submodule "iwing-iot-frontend"]
+	path = iwing-iot-frontend
+	url = https://github.com/IWING-IoT/iwing-iot-frontend.git

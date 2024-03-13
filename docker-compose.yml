@@ -1,0 +1,29 @@
+services:
+  frontend:
+    build:
+      context: ./iwing-iot-frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    env_file:
+      - ./iwing-iot-frontend/.env.production
+    networks:
+      - iwing
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./iwing-iot-backend
+      dockerfile: Dockerfile
+    ports:
+      - 5573:5573
+    env_file:
+      - ./iwing-iot-backend/.env
+    networks:
+      - iwing
+
+  # command: npx next start -H 0.0.0.0 -p 3000
+networks:
+  iwing:
+    driver: bridge

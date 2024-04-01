@@ -4,7 +4,7 @@ services:
       context: ./iwing-iot-frontend
       dockerfile: Dockerfile
     ports:
-      - 3000:3000
+      - ${FRONT_PORT}:3000
     env_file:
       - ./iwing-iot-frontend/.env.production
     environment:
@@ -19,7 +19,7 @@ services:
       context: ./iwing-iot-backend
       dockerfile: Dockerfile
     ports:
-      - 5573:5573
+      - ${BACK_PORT}:5573
     env_file:
       - ./iwing-iot-backend/.env
     networks:
